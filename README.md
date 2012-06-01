@@ -3,7 +3,7 @@
 An online interactive comic editing system mainly targeted at people interested in creating "choose your own adventure" comics with recurring scenes/characters. Each scene will be scriptable via a visual drag and drop programming language (blockly). Currently the scripting will be things like "on click play this sound" or "on click go to this other scene" but in theory animation etc. will be possible at some future point. The goal is to provide an embeddable comic that you can put on your wordpress, social media outlet of choice etc. There is also the notion of the direct link to the comic so it can be viewed on pathcomics.com itself. Sharing and forking of universes will be encouraged but not required e.g. you can set whether you want your universe to be "forkable" or "shareable" (characters, props, costumes, scenery)
 
 ##How? 
-coffeescript, socket.io, express.js, blockly, raphael.js
+coffeescript, backbone.js, socket.io, express.js, http://code.google.com/p/google-blockly/, http://ocanvas.org/
 
 
 ##What does it look like?
