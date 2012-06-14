@@ -120,7 +120,7 @@
 					id: "victoryText",
 					type: "text",
 					data: {
-						value: "You have found the treasure. {{Play again}}?
+						value: "You have found the treasure. {{Play again}}?"
 					}
 				}
 			],
