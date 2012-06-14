@@ -1,0 +1,141 @@
+{
+	id: "chooseYourOwnAdventure",
+	name: "Choose Your Own Adventure",
+	author: "shaun gilchrist",
+	startFrame: "title",
+	frames: [
+		{
+			id: "title",
+			layers: [
+				{
+					id: "background",
+					resources: [
+						{
+							id: "bgimage",
+							type: "image",
+							data: {
+								scale: 1,
+								url: "http://www.fullscreensavers.com/pics/forest01.jpg",
+								crop: { left: 10, top: 10 }
+							}
+						},
+						{
+							id: "titleText",
+							type: "text",
+							data: {
+								left: 0,
+								top: 10,
+								align: "center",
+								value: "Choose Your Own Adventure",
+								font: "Regal"
+							}
+						},
+						{
+							id: "startButton",
+							type: "text",
+							data: {
+								bottom: 10,
+								right: 10,
+								value: "Start",
+								font: "Regal",
+								background: "green",
+								color: "white",
+								border: "1px solid yellow",
+								borderRadius: "5px"
+							}
+						}
+					]
+						
+				}
+				
+			],
+			events: [
+				{
+					resource: "startButton",
+					type: "click",
+					do: [
+						{
+							object: "ComicPlayer", 
+							message: {goToFrame: "page1"}
+						}
+					]
+				}
+			]
+		},
+		{
+			id: "page1",
+			layers: [
+				{
+					id: "background",
+					resources: [
+						{
+							id: "bgimage",
+							type: "image",
+							data: {
+								scale: 1
+								url: "http://images.nationalgeographic.com/wpf/media-live/photos/000/252/cache/bamboo-forest-japan_25291_990x742.jpg", 
+								crop: {left: 1, top: 1}
+							}	
+						},
+						{
+							id: "storyText",
+							type: "text",
+							data: {
+								align: "center",
+								color: "black",
+								background: "white",
+								opacity: 0.8,
+								value: "You are in the woods. There is a path before you. Do you {{continue}} or do you {{go back}}?"
+							}
+						}
+					]
+			],
+			events: [
+				{
+					resource: "storyText/continue",
+					type: "click",
+					do: [
+						{
+							object: "ComicPlayer",
+							message: {goToFrame: "page2"}
+						}
+					]
+				},
+				{
+					resource: "storyText/go back",
+					type: "click",
+					do: [
+						{
+							object: "ComicPlayer",
+							message: {goToFrame: "title"}
+						}
+					]
+				}
+			]
+		},
+		{
+			id: "page2",
+			resources: [
+				{
+					id: "victoryText",
+					type: "text",
+					data: {
+						value: "You have found the treasure. {{Play again}}?
+					}
+				}
+			],
+			events: [
+				{
+					resource: "victoryText/Play again",
+					type: "click",
+					do: [
+						{
+							object: "ComicPlayer",
+							message: {goToFrame: "title"}
+						}
+					]
+				}
+			]
+		}
+	]
+}
